@@ -68,6 +68,8 @@ https://www.postman.com/spaceflight-geologist-44542914/public-workplace/collecti
 }
 ```
 
+---
+
 ### 3. Deduct Credits
 **Endpoint:** `POST /api/credits/{user_id}/deduct`
 **Description:** Subtract credits from a user's balance (cannot go below zero).
@@ -79,9 +81,13 @@ https://www.postman.com/spaceflight-geologist-44542914/public-workplace/collecti
 }
 ```
 
+---
+
 ### 4. Reset Credits
 **Endpoint:** `PATCH /api/credits/{user_id}/reset`
 **Description:** Reset a user's credits to zero.
+
+---
 
 ### 5. External Schema Update
 **Endpoint:** `PATCH /api/credits/external-update`
