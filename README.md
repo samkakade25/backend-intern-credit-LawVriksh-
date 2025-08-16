@@ -46,37 +46,49 @@ DATABASE_URL=postgresql://postgres:postgres@localhost:5432/credits_db
 uvicorn src.main:app --reload
 ```
 
-### Postman Collection Link:
+## Postman Collection Link:
 https://www.postman.com/spaceflight-geologist-44542914/public-workplace/collection/mo6fvci/backend-intern-credit-lawvriksh?action=share&source=copy-link&creator=32467370
 
 ## API Endpoints
 
-Get User Credits
-GET /api/credits/{user_id}
+### 1. Get User Credits
+**Endpoint:** `GET /api/credits/{user_id}`  
+**Description:** Retrieve the current credit balance and last update timestamp for a user.
 
-Add Credits
-POST /api/credits/{user_id}/add
+---
 
-Body:
+### 2. Add Credits
+**Endpoint:** `POST /api/credits/{user_id}/add`  
+**Description:** Add credits to a user's balance.  
+
+**Request Body:**
+```json
 {
   "amount": 10
 }
+```
 
-Deduct Credits
-POST /api/credits/{user_id}/deduct
+### 3. Deduct Credits
+**Endpoint:** `POST /api/credits/{user_id}/deduct`
+**Description:** Subtract credits from a user's balance (cannot go below zero).
 
-Body:
+**Request Body:**
+```json
 {
   "amount": 5
 }
+```
 
-Reset Credits
-PATCH /api/credits/{user_id}/reset
+### 4. Reset Credits
+**Endpoint:** PATCH /api/credits/{user_id}/reset
+**Description:** Reset a user's credits to zero.
 
-External Schema Update
-PATCH /api/credits/external-update
+### 5. External Schema Update
+**Endpoint:** PATCH /api/credits/external-update
+**Description:** Dynamically update the database schema.
 
-Body example:
+Request Body Example:
+```json
 {
   "operation": "add_column",
   "table": "credits",
@@ -84,5 +96,5 @@ Body example:
   "type": "integer",
   "default": 0
 }
-
+```
 
