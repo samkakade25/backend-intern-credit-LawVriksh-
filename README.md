@@ -80,14 +80,14 @@ https://www.postman.com/spaceflight-geologist-44542914/public-workplace/collecti
 ```
 
 ### 4. Reset Credits
-**Endpoint:** PATCH /api/credits/{user_id}/reset
+**Endpoint:** `PATCH /api/credits/{user_id}/reset`
 **Description:** Reset a user's credits to zero.
 
 ### 5. External Schema Update
-**Endpoint:** PATCH /api/credits/external-update
+**Endpoint:** `PATCH /api/credits/external-update`
 **Description:** Dynamically update the database schema.
 
-Request Body Example:
+**Request Body:**
 ```json
 {
   "operation": "add_column",
