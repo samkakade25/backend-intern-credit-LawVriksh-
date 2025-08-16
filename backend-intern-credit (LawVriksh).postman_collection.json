@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "986e5b39-ca89-464a-8aba-e361fdcd58d2",
+		"name": "backend-intern-credit (LawVriksh)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32467370",
+		"_collection_link": "https://www.postman.com/spaceflight-geologist-44542914/public-workplace/collection/mo6fvci/backend-intern-credit-lawvriksh?action=share&source=collection_link&creator=32467370"
+	},
+	"item": [
+		{
+			"name": "Get the current credit balance of a user.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/credits/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"credits",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add credits to a user.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"amount\": 25\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/credits/1/add",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"credits",
+						"1",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deduct credits from a user (no negative balances allowed).",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"amount\": 5\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/credits/1/deduct",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"credits",
+						"1",
+						"deduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset a user’s credits to zero.",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/credits/1/reset",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"credits",
+						"1",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update db externally",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"operation\": \"add_column\",\n  \"table\": \"credits\",\n  \"column\": \"bonus_points\",\n  \"type\": \"integer\",\n  \"default\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/schema/update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"schema",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the database schema dynamically (for external updates)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"operation\": \"add_column\",\n  \"table\": \"credits\",\n  \"column\": \"bonus_points\",\n  \"type\": \"integer\",\n  \"default\": 0\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/credits/external-update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"credits",
+						"external-update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

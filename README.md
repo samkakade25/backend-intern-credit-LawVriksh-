@@ -51,10 +51,10 @@ https://www.postman.com/spaceflight-geologist-44542914/public-workplace/collecti
 
 ## API Endpoints
 
-# Get User Credits
+Get User Credits
 GET /api/credits/{user_id}
 
-# Add Credits
+Add Credits
 POST /api/credits/{user_id}/add
 
 Body:
@@ -62,7 +62,7 @@ Body:
   "amount": 10
 }
 
-# Deduct Credits
+Deduct Credits
 POST /api/credits/{user_id}/deduct
 
 Body:
@@ -70,10 +70,10 @@ Body:
   "amount": 5
 }
 
-# Reset Credits
+Reset Credits
 PATCH /api/credits/{user_id}/reset
 
-# External Schema Update
+External Schema Update
 PATCH /api/credits/external-update
 
 Body example:
